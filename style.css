@@ -26,6 +26,10 @@ body {
   cursor: pointer;
 }
 
+.icon {
+  cursor: pointer;
+}
+
 /* HEADER */
 .header__container__navbar {
   background-color: #181818;
@@ -182,3 +186,66 @@ background-color: #181818;
   gap: 50px;
   list-style: none;
 }
+
+/* SLIDER */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 50px;
+  position: relative;
+}
+
+.show__field {
+    width: 1000px;
+    height: 400px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__card {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position:absolute;
+  opacity: 0;
+  transform: scale(0.8);
+  z-index: 1;
+  transition: 
+    left 1.1s ease, 
+    right 1.1s ease, 
+    width 1.1s ease,
+    opacity 1.1s ease,
+    transform 1.1s ease;
+}
+
+.slider__card.prev {
+  left: 0;
+  width: 15%;
+  opacity: 0.5;
+  z-index: 2;
+}
+.slider__card.next {
+  right: 0;
+  width: 15%;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.slider__card.active {
+  width: 70%;
+  opacity: 1;
+  z-index: 3;
+  transform: scale(1);
+}
+
+.arrow {
+  font-size: 150px;
+  cursor: pointer;
+  user-select: none;
+}
+
