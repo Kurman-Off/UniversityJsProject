@@ -1,0 +1,67 @@
+[
+  {
+    "id": 301,
+    "name": "Рукавиці",
+    "short_name": "accessory1",
+    "description": "Рукавиці з посиленим зчепленням для воротарів.",
+    "price": 980,
+    "image": "./images/equipment/equipment1.svg",
+    "category": "Спорядження"
+  },
+  {
+    "id": 302,
+    "name": "Рукавиці",
+    "short_name": "accessory2",
+    "description": "Легкі та гнучкі воротарські рукавиці для тренувань.",
+    "price": 740,
+    "image": "./images/equipment/equipment2.svg"
+  },
+  {
+    "id": 303,
+    "name": "Рукавиці",
+    "short_name": "accessory3",
+    "description": "Преміум рукавиці з внутрішнім захистом пальців.",
+    "price": 1050,
+    "image": "./images/equipment/equipment3.svg"
+  },
+  {
+    "id": 304,
+    "name": "Наколінники",
+    "short_name": "accessory4",
+    "description": "Амортизаційні наколінники з повітропроникного матеріалу.",
+    "price": 520,
+    "image": "./images/equipment/equipment4.svg"
+  },
+  {
+    "id": 305,
+    "name": "Наколінники",
+    "short_name": "accessory5",
+    "description": "Посилений захист коліна для активних ігор.",
+    "price": 590,
+    "image": "./images/equipment/equipment5.svg"
+  },
+  {
+    "id": 306,
+    "name": "Щитки",
+    "short_name": "accessory6",
+    "description": "Щитки з карбонового волокна з анатомічною формою.",
+    "price": 690,
+    "image": "./images/equipment/equipment6.svg"
+  },
+  {
+    "id": 307,
+    "name": "Щитки",
+    "short_name": "accessory7",
+    "description": "Легкі щитки з гнучкими краями для комфорту.",
+    "price": 610,
+    "image": "./images/equipment/equipment7.svg"
+  },
+  {
+    "id": 308,
+    "name": "Щитки",
+    "short_name": "accessory8",
+    "description": "Максимальний рівень захисту для змагань високого рівня.",
+    "price": 820,
+    "image": "./images/equipment/equipment8.svg"
+  }
+]

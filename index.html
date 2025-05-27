@@ -18,91 +18,193 @@
 </head>
 <body>
   <div class="wrapper">
+    <div id="error" class="error__message"></div>
+
     <header class="header__container">
       <nav class="header__container__navbar">
-        <div class="header__container__navbar__logo">
-          <img class="icon header__container__navbar__logo__img" src="./images/header_icons/streamline_ball.png" alt="ball">
-          <span>FCS</span>
-        </div>
+        <button id="logo" class="header__container__navbar__logo">
+          <a href="#">
+            <img class="icon header__container__navbar__logo__img" src="./images/header_icons/streamline_ball.png" alt="ball">
+            <span>FCS</span>
+          </a>
+        </button>
 
         <h1 class="header__container__navbar__h1">Football Center Shop</h1>
         
+        <!-- Бургер-іконка -->
+        <div class="burger-icon" id="burgerIcon">
+          ☰
+        </div>
+
+        <!-- Випадаюче меню -->
+        <ul class="mobile-menu" id="mobileMenu">
+          <li><a href="#">Грати</a></li>
+          <li><a href="#">Інформація про розробників</a></li>
+          <li><a href="#">Інформація щодо копірайту</a></li>
+          <li><a href="#">Додаткова інформація</a></li>
+          <li><a href="#">Вийти</a></li>
+        </ul>
+
         <div class="header__container__navbar__actions">
           <img class="icon header__container__navbar__actions__img" src="./images/header_icons/header.png" alt="gamepad">
-          <button class="btn header__container__navbar__actions__btn">Увійти</button>
+          <button class="btn header__container__navbar__actions__btn">
+            <a href="#login">Увійти</a>
+          </button>
         </div>
       </nav>
     </header>
 
     <main class="main__container">
-      <div class="main__container__banner">
-        <div class="main__container__banner__field">
-          <button class="btn main__container__banner__field__btn">
-            Перейти до категорій
-            <img class="main__container__banner__icon" src="./images/main_content_icons/ep_arrow-right.png"" alt="arrow">
-          </button>
+      <div class="main__container__content">
+        <div class="main__container__banner">
+          <div class="main__container__banner__field">
+            <button class="btn main__container__banner__field__btn">
+              <a id="go__to__categories" href="#catalog">Переглянути каталог</a>
+
+              <img class="main__container__banner__icon" src="./images/main_content_icons/ep_arrow-right.png"" alt="arrow right">
+            </button>
+          </div>
         </div>
+
+        <article class="main__container__article">
+          <img src="./images/main_content_images/Rectangle 45.svg" alt="football players">
+          
+          <div class="main__container__article__content">
+            <section class="section main__container__article__content__left__section">
+              <h2>Як Україна обіграла Шотландію</h2>
+              <p>Збірна України з футболу провела півфінальний поєдинок кваліфікації на Чемпіонат світу-2022 і обіграла команду Шотландії з рахунком 3:1.</p>
+            </section>
+
+            <section class="section main__container__article__content__right__section">
+              <p>Рахунок матчу відкрив на 33-хвилині Андрій Ярмоленко. Також голи забили Роман Яремчук та Артем Довбик. У фіналі плей-офф Україна зіграє з Уельсом 5 червня.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="main__container__article">
+          <div class="main__container__article__content">
+            <section class="section main__container__article__content__left__section">
+              <h2>Перемога Мессі та Аргентини у фіналі ЧС-2022</h2>
+              <p>Голкіпер Андрій Лунін здійснив дев'ять сейвів у виїзному матчі Реала проти РБ Лейпциг у рамках 1/8 фіналу Ліги чемпіонів.</p>
+            </section>
+
+            <section class="section main__container__article__content__right__section">
+              <p">За даними OptaJose, 25-річний українець став лише другим голкіпером мадридців принаймні з сезону-2003/04, якому вдалося здійснити 9+ сейвів в одному матчі турніру, не пропустивши.</p>
+            </section>
+          </div>
+
+          <img src="./images/main_content_images/Rectangle 46.svg" alt="football players">
+        </article>
+
+        <article class="main__container__article">
+          <img src="./images/main_content_images/Rectangle 48.svg" alt="football players">
+          
+          <div class="main__container__article__content">
+            <section class="section main__container__article__content__left__section">
+              <h2>Лудогорець під керівництвом Йовічевича став володарем Кубка Болгарії</h2>
+              <p>Лудогорець у фіналі Кубка Болгарії мінімально обіграв софійський ЦСКА із рахунком 1:0.</p>
+            </section>
+
+            <section class="section main__container__article__content__right__section">
+              <p>Таким чином, Лудогорець під керівництвом колишнього головного тренера Шахтаря Ігора Йовічевича став володарем Кубка і це вже третій трофей за підсумками сезону.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="main__container__article">
+          <div class="main__container__article__content">
+            <section class="section main__container__article__content__left__section">
+              <h2>Оболонь — Лівий Берег. Анонс і прогноз на матч УПЛ 23.05.2025</h2>
+              <p>У рамках останнього, 30 туру української Прем'єр-ліги, столична Оболонь прийме Лівий Берег — це буде не просто київське дербі, а й боротьба за виживання.</p>
+            </section>
+
+            <section class="section main__container__article__content__right__section">
+              <p>Оболонь зараз є головним фаворитом на збереження місця в УПЛ. Перед останнім туром Оболонь посідає 12 місце і випереджає зону вильоту на три очки — при цьому в останній грі якраз доведеться зіграти з Лівим Берегом.</p>
+            </section>
+          </div>
+
+          <img src="./images/main_content_images/Rectangle 49.svg" alt="football players">
+        </article>
+      </div>
+      
+      <div class="carousel">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <img src="./images/carousel-items/backpack 1.svg" alt="Slide 1">
+
+            <button class="btn btn__show__category" id="backpacks"><a href="#category">Рюкзаки</a></button>
+          </div>
+          <div class="slide">
+            <img src="./images/carousel-items/ball.svg" alt="Slide 2">
+
+            <button class="btn btn__show__category" id="balls"><a href="#category">М'ячі</a></button>
+          </div>
+          <div class="slide">
+            <img src="./images/carousel-items/boots.svg" alt="Slide 3">
+
+            <button class="btn btn__show__category" id="futsal-shoes"><a href="#category">Спортивне взуття</a></button>
+          </div>
+          <div class="slide">
+            <img src="./images/carousel-items/form.svg" alt="Slide 4">
+
+            <button class="btn btn__show__category" id="uniform"><a href="#category">Спортивна форма</a></button>
+          </div>
+          <div class="slide">
+            <img src="./images/carousel-items/rukavutsi.svg" alt="Slide 5">
+
+            <button class="btn btn__show__category" id="equipment"><a href="#category">Спорядження</a></button>
+          </div>
+        </div>
+        
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="indicators" id="indicators"></div>
       </div>
 
-      <article class="main__container__article">
-        <img src="./images/main_content_images/Rectangle 45.svg" alt="football players">
-        
-        <div class="main__container__article__content">
-          <section class="section main__container__article__content__left__section">
-            <h2>Як Україна обіграла Шотландію</h2>
-            <p>Збірна України з футболу провела півфінальний поєдинок кваліфікації на Чемпіонат світу-2022 і обіграла команду Шотландії з рахунком 3:1.</p>
-          </section>
+      <div class="category__container">
+        <button class="category__container__btn-back">
+          <a href="#catalog"> 
+            <img src="./images/main_content_icons/ep_arrow-right.png" alt="arrow left">
+          </a>
+        </button>
 
-          <section class="section main__container__article__content__right__section">
-            <p>Рахунок матчу відкрив на 33-хвилині Андрій Ярмоленко. Також голи забили Роман Яремчук та Артем Довбик. У фіналі плей-офф Україна зіграє з Уельсом 5 червня.</p>
-          </section>
+        <h2 class="category__container__h2"></h2>
+
+        <div class="category__container__items"></div>
+      </div>
+
+      <div class="authorization__container">
+        <div class="authorization__container__content">
+          <h2 class="authorization__container__content__h2">Вхід</h2>
+          
+          <label id="regLabel" class="authorization__container__content__label">
+            NAME 
+              <br>
+            <input id="regName" class="authorization__container__content__input" type="text" name="name">
+          </label>
+
+          <label class="authorization__container__content__label">
+            ЛОГІН 
+              <br>
+            <input id="loginEmail" class="authorization__container__content__input" type="email" name="email">
+          </label>
+          
+          <label class="authorization__container__content__label">
+            ПАРОЛЬ
+              <br>
+            <input id="loginPassword" class="authorization__container__content__input" type="password" name="password">
+          </label>
+
+          <button id="loginBtn" class="btn btn__login">Увійти</button>
+          <button id="registerBtn" class="btn btn__login" style="display:none;">Зареєструватися</button>
+
+          <span class="authorization__container__content__span">Ще не маєте акаунту?</span>
+
+          <button id="switchToRegister" class="btn btn__signup">Створити акаунт</button>
+          <button id="switchToLogin" class="btn btn__signup" style="display:none;">Увійти</button>
         </div>
-      </article>
-
-      <article class="main__container__article">
-        <div class="main__container__article__content">
-          <section class="section main__container__article__content__left__section">
-            <h2>Перемога Мессі та Аргентини у фіналі ЧС-2022</h2>
-            <p>Голкіпер Андрій Лунін здійснив дев'ять сейвів у виїзному матчі Реала проти РБ Лейпциг у рамках 1/8 фіналу Ліги чемпіонів.</p>
-          </section>
-
-          <section class="section item-section">
-            <p">За даними OptaJose, 25-річний українець став лише другим голкіпером мадридців принаймні з сезону-2003/04, якому вдалося здійснити 9+ сейвів в одному матчі турніру, не пропустивши.</p>
-          </section>
-        </div>
-
-        <img src="./images/main_content_images/Rectangle 46.svg" alt="football players">
-      </article>
-
-      <article class="main__container__article">
-        <img src="./images/main_content_images/Rectangle 45.svg" alt="football players">
-        
-        <div class="main__container__article__content">
-          <section class="section main__container__article__content__left__section">
-            <h2>Як Україна обіграла Шотландію</h2>
-            <p>Збірна України з футболу провела півфінальний поєдинок кваліфікації на Чемпіонат світу-2022 і обіграла команду Шотландії з рахунком 3:1.</p>
-          </section>
-
-          <section class="section main__container__article__content__right__section">
-            <p>Рахунок матчу відкрив на 33-хвилині Андрій Ярмоленко. Також голи забили Роман Яремчук та Артем Довбик. У фіналі плей-офф Україна зіграє з Уельсом 5 червня.</p>
-          </section>
-        </div>
-      </article>
-
-      <article class="main__container__article">
-        <div class="main__container__article__content">
-          <section class="section main__container__article__content__left__section">
-            <h2>Перемога Мессі та Аргентини у фіналі ЧС-2022</h2>
-            <p>Голкіпер Андрій Лунін здійснив дев'ять сейвів у виїзному матчі Реала проти РБ Лейпциг у рамках 1/8 фіналу Ліги чемпіонів.</p>
-          </section>
-
-          <section class="section main__container__article__content__right__section">
-            <p">За даними OptaJose, 25-річний українець став лише другим голкіпером мадридців принаймні з сезону-2003/04, якому вдалося здійснити 9+ сейвів в одному матчі турніру, не пропустивши.</p>
-          </section>
-        </div>
-
-        <img src="./images/main_content_images/Rectangle 46.svg" alt="football players">
-      </article>
+      </div>
     </main>
     
     <footer class="footer__container">
@@ -116,18 +218,9 @@
         </ul>
       </nav>
     </footer>
-
-    <div class="slider">
-      <span class="arrow arrow__left"><</span>
-        <div class="show__field">
-          <img class="slider__card" src="./images/main_content_images/Rectangle 46.svg" alt="football players">
-          <img class="slider__card" src="./images/main_content_images/Rectangle 45.svg" alt="football players">
-          <img class="slider__card" src="./images/header_icons/header.png" alt="football players">
-          <img class="slider__card" src="./images/header_icons/streamline_ball.png" alt="football players">
-        </div>
-      <span class="arrow arrow__right">></span>
-    </div>
   </div>
- <script src="./index.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>
