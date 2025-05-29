@@ -31,20 +31,18 @@
 
         <h1 class="header__container__navbar__h1">Football Center Shop</h1>
         
-        <!-- Бургер-іконка -->
-        <div class="burger-icon" id="burgerIcon">
+        <div class="burger__icon" id="burgerIcon">
           ☰
         </div>
 
-        <!-- Випадаюче меню -->
-        <ul class="mobile-menu" id="mobileMenu">
+        <ul class="btn__info mobile-menu" id="mobileMenu">
           <li><a href="#">Грати</a></li>
-          <li><a href="#">Інформація про розробників</a></li>
-          <li><a href="#">Інформація щодо копірайту</a></li>
-          <li><a href="#">Додаткова інформація</a></li>
-          <li><a href="#">Вийти</a></li>
+          <li><a href="#" data-info="dev">Інформація про розробників</a></li>
+          <li><a href="#" data-info="add">Інформація щодо копірайту</a></li>
+          <li><a href="#" data-info="cop">Додаткова інформація</a></li>
+          <li id="mobileLogout"><a href="#">Вийти</a></li>
         </ul>
-
+        
         <div class="header__container__navbar__actions">
           <img class="icon header__container__navbar__actions__img" src="./images/header_icons/header.png" alt="gamepad">
           <button class="btn header__container__navbar__actions__btn">
@@ -208,13 +206,20 @@
     </main>
     
     <footer class="footer__container">
+      <div id="infoModal" class="info-modal hidden">
+        <div class="info-modal__content">
+          <span id="closeModal" class="info-modal__close">&times;</span>
+          <p id="infoModalText"></p>
+        </div>
+      </div>
+
       <nav class="footer__container__navbar">
         <img class="icon header__container__navbar__logo__img" src="./images/header_icons/streamline_ball.png" alt="ball">
 
-        <ul class="footer__container__navbar__list">
-          <li><button class="btn footer__container__navbar__btn">Інформація про розробників</button></li>
-          <li><button class="btn footer__container__navbar__btn">Додаткова інформація</button></li>
-          <li><button class="btn footer__container__navbar__btn">Інформація щодо копірайту</button></li>
+        <ul class="btn__info footer__container__navbar__list">
+          <li><button class="btn footer__container__navbar__btn" data-info="dev">Інформація про розробників</button></li>
+          <li><button class="btn footer__container__navbar__btn" data-info="add">Додаткова інформація</button></li>
+          <li><button class="btn footer__container__navbar__btn" data-info="cop">Інформація щодо копірайту</button></li>
         </ul>
       </nav>
     </footer>

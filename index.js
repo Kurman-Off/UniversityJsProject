@@ -6,6 +6,7 @@ const totalSlides = slides.length;
 const indicatorsContainer = document.getElementById("indicators");
 const slider = document.querySelector('.carousel');
 const categories = document.querySelector('.category__container');
+const mainContainer = document.querySelector('.main__container');
 const mainContent = document.querySelector('.main__container__content');
 const authorizationBlock = document.querySelector('.authorization__container');
 const loginBtn = document.querySelector('.btn__login');
@@ -17,6 +18,10 @@ const emailInput = document.getElementById('loginEmail');
 const passwordInput = document.getElementById('loginPassword');
 const errorMessage = document.getElementById('error');
 const logo = document.getElementById('logo');
+const mobileMenu = document.getElementById('mobileMenu');
+const burgerIcon = document.getElementById('burgerIcon');
+const header = document.querySelector('.header__container');
+const footer = document.querySelector('.footer__container');
 
 const home = document.querySelector('.header__container__navbar__logo')
   .addEventListener('click', () => {
@@ -30,6 +35,8 @@ const authorizationBtn = document.querySelector('.header__container__navbar__act
     categories.style.display = 'none';
     slider.style.display = 'none';
     mainContent.style.display = 'none';
+    header.style.display = 'none';
+    footer.style.display = 'none';
     authorizationBlock.style.display = 'flex';
   });
 
@@ -42,6 +49,7 @@ const btnBack = document.querySelector('.category__container__btn-back')
 const goToCategories = document.getElementById('go__to__categories')
   .addEventListener('click', () => {
     mainContent.style.display = 'none';
+    mainContainer.style.alignItems  = 'center';
     slider.style.display = 'block'
   });
 
@@ -78,6 +86,7 @@ showSlide(currentSlide);
 
 document.querySelectorAll('.btn__show__category').forEach(button => {
   button.addEventListener('click', () => {
+    mainContainer.style.alignItems  = 'center';
     slider.style.display = 'none';
     categories.style.display = 'flex';
     const categoryId = button.id;
@@ -245,28 +254,95 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="btn" id="logoutBtn">Вийти</button>
     `;
 
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('token');
-      categories.style.display = 'none';
-      slider.style.display = 'none';
-      mainContent.style.display = 'none';
-      authorizationBlock.style.display = 'flex';
-      logo.disabled = true;
-      location.reload();
-    });
+    document.getElementById('logoutBtn').addEventListener('click', logout);
+  }
+
+  if (token && mobileMenu) {
+    const existingLogout = mobileMenu.querySelector('#mobileLogout');
+    if (existingLogout) existingLogout.remove();
+
+    const logoutLi = document.createElement('li');
+    logoutLi.id = 'mobileLogout';
+    logoutLi.innerHTML = `<a href="#">Вийти</a> <img src="./images/header_icons/exit.png">`;
+    logoutLi.addEventListener('click', logout);
+    mobileMenu.appendChild(logoutLi);
+  }
+
+  function logout() {
+    localStorage.removeItem('token');
+    if (categories) categories.style.display = 'none';
+    if (slider) slider.style.display = 'none';
+    if (mainContent) mainContent.style.display = 'none';
+    if (header) header.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    if (authorizationBlock) authorizationBlock.style.display = 'flex';
+    if (logo) logo.disabled = true;
+    location.reload();
   }
 });
 
 const token = JSON.parse(localStorage.getItem('token'));
 if (!token) {
+  header.style.display = 'none';
   logo.disabled = true;
   categories.style.display = 'none';
   slider.style.display = 'none';
   mainContent.style.display = 'none';
+  footer.style.display = 'none';
   authorizationBlock.style.display = 'flex';
 }
 
-document.getElementById('burgerIcon').addEventListener('hover', () => {
-  const menu = document.getElementById('mobileMenu');
-  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+burgerIcon.addEventListener('click', (e) => {
+  e.stopPropagation();
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
+document.addEventListener('click', (e) => {
+  const isClickInsideMenu = mobileMenu.contains(e.target);
+  const isClickOnIcon = burgerIcon.contains(e.target);
+
+  if (!isClickInsideMenu && !isClickOnIcon) {
+    mobileMenu.style.display = 'none';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('infoModal');
+  const modalText = document.getElementById('infoModalText');
+  const closeModal = document.getElementById('closeModal');
+
+
+  document.querySelectorAll('[data-info]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const infoType = el.dataset.info;
+
+      switch(infoType) {
+        case 'dev':
+              modalText.textContent = 'Інформація про розробників Розробники проєкту: Олексюк А.І., Желіховська Т.Ю., Куман Р.І.';
+              break;
+        case 'add':
+              modalText.innerHTML = `
+                Додаткова інформація:<br><br>
+                  Football Center Shop — це інтернет-магазин, створений для поціновувачів футболу. На сайті представлений широкий асортимент товарів, серед яких:<br><br>
+                  -футбольні м’ячі,<br>
+                  -рюкзаки,<br>
+                  -спортивна форма,<br>
+                  -взуття для футболу,<br>
+                  -професійне спорядження.<br><br>
+                  Крім цього, сайт містить інтерактивну міні-гру, де користувач може спробувати забити гол воротарю — це додає розваги та інтерактивності під час відвідування ресурсу.<br>
+                  Для зручності користувачів реалізована карусель категорій товарів, яка дозволяє швидко переглянути доступні категорії та обрати необхідне.
+              `;
+              break;
+        case 'cop':
+              modalText.textContent = 'Інформація щодо копірайту© 2025 Football Center Shop. Всі права захищені.';
+              break;
+      }
+      
+      modal.classList.remove('hidden');
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
 });
