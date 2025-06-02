@@ -1,0 +1,67 @@
+[
+  {
+    "id": 201,
+    "name": "Футбольна форма",
+    "short_name": "form1",
+    "description": "Легка та дихаюча форма для активних матчів.",
+    "price": 1150,
+    "image": "./images/uniforms/form1.svg",
+    "category": "Форма"
+  },
+  {
+    "id": 202,
+    "name": "Футбольна форма",
+    "short_name": "form2",
+    "description": "Офіційна репліка форми сезону 2024/25.",
+    "price": 1320,
+    "image": "./images/uniforms/form2.svg"
+  },
+  {
+    "id": 203,
+    "name": "Футбольна форма",
+    "short_name": "form3",
+    "description": "Форма з вологовідштовхувальної тканини для комфорту.",
+    "price": 1245,
+    "image": "./images/uniforms/form3.svg"
+  },
+  {
+    "id": 204,
+    "name": "Футбольна форма",
+    "short_name": "form4",
+    "description": "Домашня форма збірної України з вишитим гербом.",
+    "price": 1399,
+    "image": "./images/uniforms/form4.svg"
+  },
+  {
+    "id": 205,
+    "name": "Футбольна форма",
+    "short_name": "form5",
+    "description": "Інноваційна вентиляція для збереження сухості.",
+    "price": 1470,
+    "image": "./images/uniforms/form5.svg"
+  },
+  {
+    "id": 206,
+    "name": "Футбольна форма",
+    "short_name": "form6",
+    "description": "Форма з сітчастими вставками для оптимального охолодження.",
+    "price": 1380,
+    "image": "./images/uniforms/form6.svg"
+  },
+  {
+    "id": 207,
+    "name": "Футбольна форма",
+    "short_name": "form7",
+    "description": "Модель з еластичного поліестеру для зручної посадки.",
+    "price": 1280,
+    "image": "./images/uniforms/form7.svg"
+  },
+  {
+    "id": 208,
+    "name": "Футбольна форма",
+    "short_name": "form8",
+    "description": "Форма з логотипом клубу і номером на спині.",
+    "price": 1345,
+    "image": "./images/uniforms/form8.svg"
+  }
+]
