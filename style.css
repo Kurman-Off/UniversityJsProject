@@ -141,6 +141,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  height: 60px;
 }
 
 .mobile-menu li a {
@@ -149,6 +150,13 @@ a {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 20px;
+
+}
+
+.mobile-menu .start__game {
+  width: 100%;
+  height: 100%;
+  padding-top: 5px;
 }
 
 .header__container__navbar__actions {

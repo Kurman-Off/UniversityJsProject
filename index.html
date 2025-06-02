@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="./style.css"><link>
+  <title>Project</title>
+
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./Game/game.css">
   <!-- Links fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,15 +37,29 @@
         </div>
 
         <ul class="btn__info mobile-menu" id="mobileMenu">
-          <li><a href="#">Грати</a></li>
+          <li>
+            <a href="#" class="start__game" data-action="start-game">
+              <img 
+                class="icon header__container__navbar__actions__img" 
+                src="./images/header_icons/header.png" 
+                alt="gamepad" 
+                data-action="start-game"
+              >
+            </a>
+          </li>
           <li><a href="#" data-info="dev">Інформація про розробників</a></li>
-          <li><a href="#" data-info="add">Інформація щодо копірайту</a></li>
-          <li><a href="#" data-info="cop">Додаткова інформація</a></li>
+          <li><a href="#" data-info="cop">Інформація щодо копірайту</a></li>
+          <li><a href="#" data-info="add">Додаткова інформація</a></li>
           <li id="mobileLogout"><a href="#">Вийти</a></li>
         </ul>
         
         <div class="header__container__navbar__actions">
-          <img class="icon header__container__navbar__actions__img" src="./images/header_icons/header.png" alt="gamepad">
+          <img 
+            class="icon header__container__navbar__actions__img" 
+            src="./images/header_icons/header.png" 
+            alt="gamepad" 
+            data-action="start-game"
+          >
           <button class="btn header__container__navbar__actions__btn">
             <a href="#login">Увійти</a>
           </button>
@@ -203,6 +218,42 @@
           <button id="switchToLogin" class="btn btn__signup" style="display:none;">Увійти</button>
         </div>
       </div>
+
+      <div class="game-container">
+        <div id="topBar">
+          <div id="score">Голи: 0</div>
+          <div id="message">Натисніть кнопку 'Почати гру' щоб почати</div>
+          <div id="shotTimer">Час на удар: -</div>
+
+          <div id="buttons">
+            <button id="startGame">Почати гру</button>
+            <button id="pauseGame" style="display: none">Пауза</button>
+            <button id="endGame" style="display: none">Завершити гру</button>
+          </div>
+
+          <label for="difficulty">Рівень:</label>
+          <select id="difficulty">
+            <option value="easy">Легкий</option>
+            <option value="normal" selected>Середній</option>
+            <option value="hard">Складний</option>
+          </select>
+        </div>
+        <div id="gameArea">
+          <div id="goal">
+            <div class="goal-section" id="section1"></div>
+            <div class="goal-section" id="section2"></div>
+            <div class="goal-section" id="section3"></div>
+            <div class="goal-section" id="section4"></div>
+            <div class="goal-section" id="section5"></div>
+            <div class="goal-section" id="section6"></div>
+            <div class="goal-section" id="section7"></div>
+            <div class="goal-section" id="section8"></div>
+            <div class="goal-section" id="section9"></div>
+          </div>
+          <div id="ball"></div>
+          <div id="goalkeeper"></div>
+        </div>
+      </div>
     </main>
     
     <footer class="footer__container">
@@ -227,5 +278,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
   <script src="./index.js"></script>
+  <script src="Game/scripts/constants.js"></script>
+  <script src="Game/scripts/gameState.js"></script>
+  <script src="Game/scripts/gameMechanics.js"></script>
+  <script src="Game/scripts/eventHandlers.js"></script>
+  <script src="Game/main.js"></script>
 </body>
 </html>

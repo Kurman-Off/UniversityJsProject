@@ -11,6 +11,7 @@ const mainContent = document.querySelector('.main__container__content');
 const authorizationBlock = document.querySelector('.authorization__container');
 const loginBtn = document.querySelector('.btn__login');
 const signUpBtn = document.querySelector('.btn__signup');
+const logUotBtn = document.querySelector('.header__container__navbar__actions__btn');
 const h2 = document.querySelector('.authorization__container__content__h2');
 const labelName = document.getElementById('regLabel');
 const span = document.querySelector('.authorization__container__content__span');
@@ -22,13 +23,24 @@ const mobileMenu = document.getElementById('mobileMenu');
 const burgerIcon = document.getElementById('burgerIcon');
 const header = document.querySelector('.header__container');
 const footer = document.querySelector('.footer__container');
+const gameContainer = document.querySelector('.game-container'); 
 
 const home = document.querySelector('.header__container__navbar__logo')
   .addEventListener('click', () => {
     categories.style.display = 'none';
     slider.style.display = 'none';
     mainContent.style.display = 'flex';
+    gameContainer.style.display = 'none';
   });
+
+const game = document.addEventListener('click', (event) => {
+  const action = event.target.dataset.action;
+
+  if (action === 'start-game') {
+    event.preventDefault();
+    showGame();
+  }
+});
 
 const authorizationBtn = document.querySelector('.header__container__navbar__actions__btn')
   .addEventListener('click', () => {
@@ -90,7 +102,7 @@ document.querySelectorAll('.btn__show__category').forEach(button => {
     slider.style.display = 'none';
     categories.style.display = 'flex';
     const categoryId = button.id;
-    const jsonPath = `./${categoryId}.json`;
+    const jsonPath = `./JSON/${categoryId}.json`;
 
     fetch(jsonPath)
       .then(res => res.json())
@@ -245,14 +257,9 @@ function login() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const token = JSON.parse(localStorage.getItem('token'));
-  const navbar = document.querySelector('.header__container__navbar__actions');
-
-  if (token && navbar) {
-    navbar.innerHTML = `
-      <img class="icon header__container__navbar__actions__img" src="./images/header_icons/header.png" alt="gamepad">
-      <span>Привіт, ${token.name}!</span>
-      <button class="btn" id="logoutBtn">Вийти</button>
-    `;
+  if (token) {
+    logUotBtn.textContent = 'Вийти';
+    logUotBtn.id = 'logoutBtn';
 
     document.getElementById('logoutBtn').addEventListener('click', logout);
   }
@@ -277,6 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footer) footer.style.display = 'none';
     if (authorizationBlock) authorizationBlock.style.display = 'flex';
     if (logo) logo.disabled = true;
+    logUotBtn.textContent = 'Увійти';
+    logUotBtn.id = '';
     location.reload();
   }
 });
@@ -346,3 +355,11 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('hidden');
   });
 });
+
+function showGame() {
+  categories.style.display = 'none';
+  slider.style.display = 'none';
+  mainContent.style.display = 'none';
+  mainContainer.style.margin = 0;
+  gameContainer.style.display = 'flex';
+}
